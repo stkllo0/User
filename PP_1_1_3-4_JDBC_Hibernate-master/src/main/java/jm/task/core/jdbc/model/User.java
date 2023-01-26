@@ -78,9 +78,6 @@ public class User {
     {
         int result = 17;
 
-        // 31 используется, поскольку это простое число, а также обеспечивает более высокую производительность, поскольку:
-        // 31 * result == (result << 5) - result
-
         result = 31 * result + (name == null ? 0 : name.hashCode());
         result = 31 * result + age;
         result = 31 * result + (id == null ? 0 : id.hashCode());
