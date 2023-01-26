@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
     public void removeUserById(long id) {
         userDao.removeUserById(id);
     }
-
+    @Override
     public List<User> getAllUsers() {
         List<User> users =  userDao.getAllUsers();
         for (User user : users) {
@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
         }
         return users;
     }
-
+    @Override
     public void cleanUsersTable() {
         userDao.cleanUsersTable();
     }
