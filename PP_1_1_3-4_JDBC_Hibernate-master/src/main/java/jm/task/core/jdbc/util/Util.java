@@ -15,24 +15,10 @@ import java.util.Properties;
 import static com.mysql.cj.conf.PropertyKey.DBNAME;
 import static com.mysql.cj.conf.PropertyKey.HOST;
 public class Util {
-    private static final String URL = "jdbc:mysql://localhost:3306/mysql";
-    private static final String LOGIN = "root";
-    private static final String PASS = "root123.";
-
-    public static Connection getConnection() {
-        try {
-            return DriverManager.getConnection(URL, LOGIN, PASS);
-        } catch (SQLException ex) {
-            System.out.println("Соединение не создано");
-            ex.printStackTrace();
-            throw new RuntimeException(ex);
-        }
-    }
 
     private static SessionFactory sessionFactory;
 
     public static SessionFactory getSessionFactory() {
-        String connectionURL = "jdbc:mysql://" + HOST + ":3306/" + DBNAME;
 
         try {
             Configuration configuration = new Configuration();
